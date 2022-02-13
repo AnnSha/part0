@@ -1,0 +1,17 @@
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: 302-code
+content-type: text/html;
+The server responds with HTTP status code 302. This is a URL redirect,
+with which the server asks the browser to do a new HTTP GET request for location: /exampleapp/notes
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{content: "I'll miss you baby",date: "2022-02-12T18:17:56.287Z"}, ...]
+
+
